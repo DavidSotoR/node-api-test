@@ -1,0 +1,31 @@
+{
+  "name": "api-test",
+  "version": "1.0.0",
+  "description": "Prueba de API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "migrate": "npx knex migrate:latest --knexfile ./db/knexfile.js",
+    "down": "npx knex migrate:down --knexfile ./db/knexfile.js",
+    "make-seeds" : "npx knex seed:make dev --knexfile ./db/knexfile.js",
+    "seeds": "npx knex seed:run --knexfile ./db/knexfile.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidSotoR/node-api-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavidSotoR/node-api-test/issues"
+  },
+  "homepage": "https://github.com/DavidSotoR/node-api-test#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "knex": "^2.3.0",
+    "nodemon": "^2.0.19",
+    "objection": "^3.0.1",
+    "pg": "^8.8.0"
+  }
+}
