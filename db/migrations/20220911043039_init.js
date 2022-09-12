@@ -10,8 +10,16 @@ exports.up = function(knex) {
     table.decimal('sueldo_semanal', 100, 2).notNullable();
     table.timestamps(true, true);
   })
+  .createTable('checkin', (table) => {
+    table.increments().primary();
+    table.string('id_empleado').notNullable();
+    table.string('hora_inicio');
+    table.string('hora_salida');
+    table.integer('horas_trabajadas')
+    table.timestamps(true, true)
+  })
 };
 
 exports.down = function(knex) {
-  return knex.schema.dropTableIfExists('empleados')
+  return knex.schema.dropTableIfExists('empleados').dropTableIfExists('checkin')
 };
